@@ -255,7 +255,7 @@ if readFile and writeFile then
             return unpack(assets)
         end
 
-        if releaseInfo then
+        if releaseInfo and releaseInfo.tag_name then
             writeFile("__oh_version.txt", releaseInfo.tag_name)
         end
     elseif ran and (releaseInfo and releaseInfo.tag_name == result) then
